@@ -476,25 +476,11 @@ font font{background:transparent!important;box-shadow:none!important}
         <p style="color:var(--muted);font-size:14px;margin-top:18px;font-style:italic">"Building the Road to Zero Carbon"</p>
       </div>
       <form id="contactForm">
-        <!-- FormSubmit.co: envía automáticamente a cmunioz5235@gmail.com (no requiere clave) -->
-        <input type="hidden" name="_subject" value="Nuevo contacto desde la web BINORD Advisory">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_autoresponse" value="¡Gracias por comunicarte con BINORD ADVISORY CO.!
-
-Hemos recibido tu consulta correctamente y queremos darte la bienvenida. Somos una consultoría especializada en Sistemas de Gestión Integrados (ISO 9001, 14001, 45001, 14064 y 14067), descarbonización y controles internos para empresas constructoras viales, de saneamiento e infraestructura.
-
-Trabajamos con un compromiso firme con el cumplimiento de las normas internacionales y con el cuidado del medio ambiente, acompañando a las organizaciones a construir de forma más responsable en su camino hacia el carbono cero.
-
-Un integrante de nuestro equipo revisará tu mensaje y te responderá a la brevedad.
-
-Conocé más sobre nosotros en: https://chaino1974.github.io/BInord-Advisory/
-
-Cordialmente,
-Claudio Muñoz — BINORD ADVISORY CO.
-Building the Road to Zero Carbon
-WhatsApp: +54 3764 588256 · cmunioz5235@gmail.com">
-        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+        <!-- Web3Forms: entrega las consultas a cmunioz5235@gmail.com -->
+        <input type="hidden" name="access_key" value="115e7300-8aae-43ad-be55-082a04d9e693">
+        <input type="hidden" name="subject" value="Nuevo contacto desde la web BINORD Advisory">
+        <input type="hidden" name="from_name" value="Web BINORD Advisory">
+        <input type="checkbox" name="botcheck" style="display:none !important" tabindex="-1" autocomplete="off">
 
         <div class="form-row">
           <div>
@@ -646,7 +632,7 @@ contactForm.addEventListener('submit',async e=>{
   btn.textContent='Enviando...'; btn.disabled=true;
   formResult.style.display='none';
   try{
-    const res=await fetch('https://formsubmit.co/ajax/cmunioz5235@gmail.com',{
+    const res=await fetch('https://api.web3forms.com/submit',{
       method:'POST',
       headers:{'Accept':'application/json'},
       body:new FormData(contactForm)
