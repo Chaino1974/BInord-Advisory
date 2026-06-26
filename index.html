@@ -173,6 +173,17 @@ form button[type=submit]{margin-top:22px;width:100%;cursor:pointer}
 .cc-opt .nm{flex:1 1 auto;color:var(--txt)}
 .cc-opt .dl{color:var(--muted)}
 
+/* FOOTER */
+footer{border-top:1px solid var(--line);padding:50px 0 30px;background:var(--dark)}
+.fgrid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px;margin-bottom:30px}
+.fgrid .logo{display:flex;align-items:center;gap:12px;font-weight:800;font-size:18px}
+.fgrid .logo img{height:40px}
+.fgrid p{color:var(--muted);font-size:14px;max-width:320px;margin-top:14px}
+.fnav{display:flex;gap:26px;flex-wrap:wrap}
+.fnav a{color:var(--muted);font-size:14px}
+.fnav a:hover{color:var(--green)}
+.fbot{border-top:1px solid var(--line);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;color:var(--muted);font-size:13px}
+
 /* LANGUAGE SELECTOR */
 .lang-select{position:relative;flex:0 0 auto}
 .lang-trigger{display:inline-flex;align-items:center;gap:7px;height:38px;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:8px;color:var(--txt);font-family:inherit;font-size:13px;font-weight:600;padding:0 11px;cursor:pointer;transition:.2s}
@@ -536,14 +547,6 @@ font font{background:transparent!important;box-shadow:none!important}
         <a href="#obras">Obras</a>
         <a href="#etica">Ética</a>
         <a href="#contacto">Contacto</a>
-      </div>
-      <div class="lang-select lang-foot notranslate" translate="no" data-lang-select>
-        <button type="button" class="lang-trigger" aria-haspopup="listbox" aria-expanded="false" aria-label="Idioma / Language">
-          <img class="lang-flag" src="https://flagcdn.com/24x18/es.png" alt="">
-          <span class="lang-name">Idioma</span>
-          <span class="cc-caret">▾</span>
-        </button>
-        <div class="lang-panel" role="listbox"></div>
       </div>
     </div>
     <div class="fbot">
