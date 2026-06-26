@@ -653,7 +653,20 @@ contactForm.addEventListener('submit',async e=>{
 // [código ISO de Google Translate, etiqueta, abreviatura, bandera]
 const LANGS=[
   ['es','Español','ES','es'],
-  ['en','English','EN','gb'],
+  ['en','English (US)','EN','us'],
+  ['en','English (UK)','EN','gb'],
+  ['pt','Português','PT','pt'],
+  ['fr','Français','FR','fr'],
+  ['it','Italiano','IT','it'],
+  ['de','Deutsch','DE','de'],
+  ['no','Norsk','NO','no'],
+  ['sv','Svenska','SV','se'],
+  ['nl','Nederlands','NL','nl'],
+  ['ru','Русский','RU','ru'],
+  ['is','Íslenska','IS','is'],
+  ['zh-CN','中文','ZH','cn'],
+  ['ar','العربية','AR','sa'],
+  ['ar','الدارجة','AR','ma'],
   ['ja','日本語','JA','jp'],
   ['nl','Nederlands (België)','NL','be'],
   ['fr','Français (Belgique)','FR','be']
@@ -711,7 +724,7 @@ window.addEventListener('load',()=>setTimeout(syncLangTriggers,1000));
 <!-- Traductor automático de Google -->
 <script type="text/javascript">
 function googleTranslateElementInit(){
-  new google.translate.TranslateElement({pageLanguage:'es',includedLanguages:'es,en,ja,nl,fr',autoDisplay:false},'google_translate_element');
+  new google.translate.TranslateElement({pageLanguage:'es',includedLanguages:'es,en,pt,fr,it,de,no,sv,nl,ru,is,zh-CN,ar,ja',autoDisplay:false},'google_translate_element');
 }
 </script>
 <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
