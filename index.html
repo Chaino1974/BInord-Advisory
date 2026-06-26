@@ -173,16 +173,26 @@ form button[type=submit]{margin-top:22px;width:100%;cursor:pointer}
 .cc-opt .nm{flex:1 1 auto;color:var(--txt)}
 .cc-opt .dl{color:var(--muted)}
 
-/* FOOTER */
-footer{border-top:1px solid var(--line);padding:50px 0 30px;background:var(--dark)}
-.fgrid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px;margin-bottom:30px}
-.fgrid .logo{display:flex;align-items:center;gap:12px;font-weight:800;font-size:18px}
-.fgrid .logo img{height:40px}
-.fgrid p{color:var(--muted);font-size:14px;max-width:320px;margin-top:14px}
-.fnav{display:flex;gap:26px;flex-wrap:wrap}
-.fnav a{color:var(--muted);font-size:14px}
-.fnav a:hover{color:var(--green)}
-.fbot{border-top:1px solid var(--line);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;color:var(--muted);font-size:13px}
+/* LANGUAGE SELECTOR */
+.lang-select{position:relative;flex:0 0 auto}
+.lang-trigger{display:inline-flex;align-items:center;gap:7px;height:38px;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:8px;color:var(--txt);font-family:inherit;font-size:13px;font-weight:600;padding:0 11px;cursor:pointer;transition:.2s}
+.lang-trigger:hover{border-color:var(--green);color:var(--green)}
+.lang-flag{width:22px;height:16px;object-fit:cover;border-radius:2px;display:block}
+.lang-panel{position:absolute;top:calc(100% + 8px);right:0;z-index:120;width:215px;background:#0e1712;border:1px solid var(--line);border-radius:10px;box-shadow:0 18px 44px rgba(0,0,0,.55);padding:8px;display:none}
+.lang-panel.open{display:block}
+.lang-opt{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:7px;cursor:pointer;font-size:14px;color:var(--txt)}
+.lang-opt:hover{background:rgba(61,220,132,.12)}
+.lang-opt img{width:24px;height:18px;object-fit:cover;border-radius:2px;flex:0 0 auto}
+.lang-opt .sub{color:var(--muted);font-size:12px;margin-left:auto}
+.lang-foot .lang-panel{right:auto;left:0;top:auto;bottom:calc(100% + 8px)}
+/* ocultar la barra superior de Google Translate */
+.goog-te-banner-frame.skiptranslate,.goog-te-gadget-icon,#goog-gt-tt,.goog-te-balloon-frame{display:none!important}
+.goog-te-gadget{height:0;overflow:hidden;color:transparent!important;font-size:0!important}
+body{top:0!important;position:static!important}
+.skiptranslate iframe{visibility:hidden!important;height:0!important;border:0!important}
+font font{background:transparent!important;box-shadow:none!important}
+.goog-text-highlight{background:none!important;box-shadow:none!important}
+#google_translate_element{position:absolute!important;left:-9999px!important;top:-9999px!important;height:0;overflow:hidden}
 
 @media(max-width:900px){
   .hero-grid,.split,.contact{grid-template-columns:1fr}
@@ -192,6 +202,7 @@ footer{border-top:1px solid var(--line);padding:50px 0 30px;background:var(--dar
   .nav nav{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;background:var(--dark);padding:20px 24px;border-bottom:1px solid var(--line);gap:18px}
   .nav nav.open{display:flex}
   .menu-toggle{display:block}
+  .lang-panel{right:0;left:auto}
 }
 @media(max-width:560px){
   .stats,.cards,.mvv,.iso-grid,.gallery{grid-template-columns:1fr}
@@ -215,6 +226,14 @@ footer{border-top:1px solid var(--line);padding:50px 0 30px;background:var(--dar
       <a href="#obras">Obras</a>
       <a href="#etica">Ética</a>
       <a href="#contacto" class="btn">Contacto</a>
+      <div class="lang-select notranslate" translate="no" data-lang-select>
+        <button type="button" class="lang-trigger" aria-haspopup="listbox" aria-expanded="false" aria-label="Idioma / Language">
+          <img class="lang-flag" src="https://flagcdn.com/24x18/es.png" alt="">
+          <span class="lang-name">ES</span>
+          <span class="cc-caret">▾</span>
+        </button>
+        <div class="lang-panel" role="listbox"></div>
+      </div>
     </nav>
     <button class="menu-toggle" onclick="document.getElementById('menu').classList.toggle('open')">&#9776;</button>
   </div>
@@ -518,6 +537,14 @@ footer{border-top:1px solid var(--line);padding:50px 0 30px;background:var(--dar
         <a href="#etica">Ética</a>
         <a href="#contacto">Contacto</a>
       </div>
+      <div class="lang-select lang-foot notranslate" translate="no" data-lang-select>
+        <button type="button" class="lang-trigger" aria-haspopup="listbox" aria-expanded="false" aria-label="Idioma / Language">
+          <img class="lang-flag" src="https://flagcdn.com/24x18/es.png" alt="">
+          <span class="lang-name">Idioma</span>
+          <span class="cc-caret">▾</span>
+        </button>
+        <div class="lang-panel" role="listbox"></div>
+      </div>
     </div>
     <div class="fbot">
       <span>© 2026 BINORD Advisory Co. — Todos los derechos reservados.</span>
@@ -525,6 +552,9 @@ footer{border-top:1px solid var(--line);padding:50px 0 30px;background:var(--dar
     </div>
   </div>
 </footer>
+
+<!-- contenedor oculto del traductor de Google -->
+<div id="google_translate_element"></div>
 
 <script>
 // cerrar menú móvil al hacer clic
@@ -546,4 +576,145 @@ addEventListener('scroll',()=>{navEl.style.boxShadow=scrollY>20?'0 8px 30px rgba
 // ---- Desplegable de códigos de país (todos los países) ----
 const COUNTRIES=[["AF","93","Afghanistan"],["AL","355","Albania"],["DZ","213","Algeria"],["AS","1","American Samoa"],["AD","376","Andorra"],["AO","244","Angola"],["AI","1","Anguilla"],["AG","1","Antigua and Barbuda"],["AR","54","Argentina"],["AM","374","Armenia"],["AW","297","Aruba"],["AU","61","Australia"],["AT","43","Austria"],["AZ","994","Azerbaijan"],["BS","1","Bahamas"],["BH","973","Bahrain"],["BD","880","Bangladesh"],["BB","1","Barbados"],["BY","375","Belarus"],["BE","32","Belgium"],["BZ","501","Belize"],["BJ","229","Benin"],["BM","1","Bermuda"],["BT","975","Bhutan"],["BO","591","Bolivia"],["BQ","599","Bonaire, Sint Eustatius and Saba"],["BA","387","Bosnia and Herzegovina"],["BW","267","Botswana"],["BR","55","Brazil"],["IO","246","British Indian Ocean Territory"],["BN","673","Brunei Darussalam"],["BG","359","Bulgaria"],["BF","226","Burkina Faso"],["BI","257","Burundi"],["CV","238","Cabo Verde"],["KH","855","Cambodia"],["CM","237","Cameroon"],["CA","1","Canada"],["KY","1","Cayman Islands"],["CF","236","Central African Republic"],["TD","235","Chad"],["CL","56","Chile"],["CN","86","China"],["CX","61","Christmas Island"],["CC","61","Cocos (Keeling) Islands"],["CO","57","Colombia"],["KM","269","Comoros"],["CG","242","Congo"],["CD","243","Congo (Rep. Dem.)"],["CK","682","Cook Islands"],["CR","506","Costa Rica"],["HR","385","Croatia"],["CU","53","Cuba"],["CW","599","Curaçao"],["CY","357","Cyprus"],["CZ","420","Czechia"],["CI","225","Côte d'Ivoire"],["DK","45","Denmark"],["DJ","253","Djibouti"],["DM","1","Dominica"],["DO","1","Dominican Republic"],["EC","593","Ecuador"],["EG","20","Egypt"],["SV","503","El Salvador"],["GQ","240","Equatorial Guinea"],["ER","291","Eritrea"],["EE","372","Estonia"],["SZ","268","Eswatini"],["ET","251","Ethiopia"],["FK","500","Falkland Islands (Malvinas)"],["FO","298","Faroe Islands"],["FJ","679","Fiji"],["FI","358","Finland"],["FR","33","France"],["GF","594","French Guiana"],["PF","689","French Polynesia"],["GA","241","Gabon"],["GM","220","Gambia"],["GE","995","Georgia"],["DE","49","Germany"],["GH","233","Ghana"],["GI","350","Gibraltar"],["GR","30","Greece"],["GL","299","Greenland"],["GD","1","Grenada"],["GP","590","Guadeloupe"],["GU","1","Guam"],["GT","502","Guatemala"],["GG","44","Guernsey"],["GN","224","Guinea"],["GW","245","Guinea-Bissau"],["GY","592","Guyana"],["HT","509","Haiti"],["VA","39","Holy See (Vatican City)"],["HN","504","Honduras"],["HK","852","Hong Kong"],["HU","36","Hungary"],["IS","354","Iceland"],["IN","91","India"],["ID","62","Indonesia"],["IR","98","Iran"],["IQ","964","Iraq"],["IE","353","Ireland"],["IM","44","Isle of Man"],["IL","972","Israel"],["IT","39","Italy"],["JM","1","Jamaica"],["JP","81","Japan"],["JE","44","Jersey"],["JO","962","Jordan"],["KZ","7","Kazakhstan"],["KE","254","Kenya"],["KI","686","Kiribati"],["KW","965","Kuwait"],["KG","996","Kyrgyzstan"],["LA","856","Laos"],["LV","371","Latvia"],["LB","961","Lebanon"],["LS","266","Lesotho"],["LR","231","Liberia"],["LY","218","Libya"],["LI","423","Liechtenstein"],["LT","370","Lithuania"],["LU","352","Luxembourg"],["MO","853","Macao"],["MG","261","Madagascar"],["MW","265","Malawi"],["MY","60","Malaysia"],["MV","960","Maldives"],["ML","223","Mali"],["MT","356","Malta"],["MH","692","Marshall Islands"],["MQ","596","Martinique"],["MR","222","Mauritania"],["MU","230","Mauritius"],["YT","262","Mayotte"],["MX","52","Mexico"],["FM","691","Micronesia"],["MD","373","Moldova"],["MC","377","Monaco"],["MN","976","Mongolia"],["ME","382","Montenegro"],["MS","1","Montserrat"],["MA","212","Morocco"],["MZ","258","Mozambique"],["MM","95","Myanmar"],["NA","264","Namibia"],["NR","674","Nauru"],["NP","977","Nepal"],["NL","31","Netherlands"],["NC","687","New Caledonia"],["NZ","64","New Zealand"],["NI","505","Nicaragua"],["NE","227","Niger"],["NG","234","Nigeria"],["NU","683","Niue"],["NF","672","Norfolk Island"],["KP","850","North Korea"],["MK","389","North Macedonia"],["MP","1","Northern Mariana Islands"],["NO","47","Norway"],["OM","968","Oman"],["PK","92","Pakistan"],["PW","680","Palau"],["PS","970","Palestine"],["PA","507","Panama"],["PG","675","Papua New Guinea"],["PY","595","Paraguay"],["PE","51","Peru"],["PH","63","Philippines"],["PL","48","Poland"],["PT","351","Portugal"],["PR","1","Puerto Rico"],["QA","974","Qatar"],["RO","40","Romania"],["RU","7","Russian Federation"],["RW","250","Rwanda"],["RE","262","Réunion"],["BL","590","Saint Barthélemy"],["SH","290","Saint Helena"],["KN","1","Saint Kitts and Nevis"],["LC","1","Saint Lucia"],["MF","590","Saint Martin"],["PM","508","Saint Pierre and Miquelon"],["VC","1","Saint Vincent and the Grenadines"],["WS","685","Samoa"],["SM","378","San Marino"],["ST","239","Sao Tome and Principe"],["SA","966","Saudi Arabia"],["SN","221","Senegal"],["RS","381","Serbia"],["SC","248","Seychelles"],["SL","232","Sierra Leone"],["SG","65","Singapore"],["SX","1","Sint Maarten"],["SK","421","Slovakia"],["SI","386","Slovenia"],["SB","677","Solomon Islands"],["SO","252","Somalia"],["ZA","27","South Africa"],["KR","82","South Korea"],["SS","211","South Sudan"],["ES","34","Spain"],["LK","94","Sri Lanka"],["SD","249","Sudan"],["SR","597","Suriname"],["SJ","47","Svalbard and Jan Mayen"],["SE","46","Sweden"],["CH","41","Switzerland"],["SY","963","Syria"],["TW","886","Taiwan"],["TJ","992","Tajikistan"],["TZ","255","Tanzania"],["TH","66","Thailand"],["TL","670","Timor-Leste"],["TG","228","Togo"],["TK","690","Tokelau"],["TO","676","Tonga"],["TT","1","Trinidad and Tobago"],["TN","216","Tunisia"],["TM","993","Turkmenistan"],["TC","1","Turks and Caicos Islands"],["TV","688","Tuvalu"],["TR","90","Türkiye"],["UG","256","Uganda"],["UA","380","Ukraine"],["AE","971","United Arab Emirates"],["GB","44","United Kingdom"],["US","1","United States"],["UY","598","Uruguay"],["UZ","998","Uzbekistan"],["VU","678","Vanuatu"],["VE","58","Venezuela"],["VN","84","Vietnam"],["VG","1","Virgin Islands (British)"],["VI","1","Virgin Islands (U.S.)"],["WF","681","Wallis and Futuna"],["EH","212","Western Sahara"],["YE","967","Yemen"],["ZM","260","Zambia"],["ZW","263","Zimbabwe"],["AX","358","Åland Islands"]];
 const ccTrigger=document.getElementById('ccTrigger');
-const ccPanel=doc
+const ccPanel=document.getElementById('ccPanel');
+const ccList=document.getElementById('ccList');
+const ccSearch=document.getElementById('ccSearch');
+const ccFlag=document.getElementById('ccFlag');
+const ccCode=document.getElementById('ccCode');
+const ccSelect=document.getElementById('ccSelect');
+const phoneNumber=document.getElementById('phoneNumber');
+const telefonoFull=document.getElementById('telefonoFull');
+let ccCurrent=COUNTRIES.find(c=>c[0]==='AR');
+
+function ccFlagUrl(iso){return 'https://flagcdn.com/24x18/'+iso.toLowerCase()+'.png';}
+function renderCC(filter){
+  filter=(filter||'').trim().toLowerCase();
+  ccList.innerHTML='';
+  COUNTRIES.filter(c=>!filter||c[2].toLowerCase().includes(filter)||c[1].includes(filter)).forEach(c=>{
+    const div=document.createElement('div');
+    div.className='cc-opt';
+    div.innerHTML='<img src="'+ccFlagUrl(c[0])+'" alt=""><span class="nm">'+c[2]+'</span><span class="dl">+'+c[1]+'</span>';
+    div.addEventListener('click',()=>selectCC(c));
+    ccList.appendChild(div);
+  });
+}
+function selectCC(c){
+  ccCurrent=c;
+  ccFlag.src=ccFlagUrl(c[0]);
+  ccCode.textContent='+'+c[1];
+  ccPanel.classList.remove('open');
+  ccTrigger.setAttribute('aria-expanded','false');
+  updateTel();
+}
+function updateTel(){ telefonoFull.value='+'+ccCurrent[1]+' '+phoneNumber.value.trim(); }
+ccTrigger.addEventListener('click',e=>{
+  e.stopPropagation();
+  const open=ccPanel.classList.toggle('open');
+  ccTrigger.setAttribute('aria-expanded',open?'true':'false');
+  if(open){ renderCC(''); ccSearch.value=''; ccSearch.focus(); }
+});
+ccSearch.addEventListener('input',()=>renderCC(ccSearch.value));
+phoneNumber.addEventListener('input',updateTel);
+document.addEventListener('click',e=>{ if(!ccSelect.contains(e.target)) ccPanel.classList.remove('open'); });
+selectCC(ccCurrent);
+
+// envío del formulario vía FormSubmit (AJAX, sin recargar)
+const contactForm=document.getElementById('contactForm');
+const formResult=document.getElementById('formResult');
+contactForm.addEventListener('submit',async e=>{
+  e.preventDefault();
+  updateTel();
+  const btn=contactForm.querySelector('button[type=submit]');
+  const original=btn.textContent;
+  btn.textContent='Enviando...'; btn.disabled=true;
+  formResult.style.display='none';
+  try{
+    const res=await fetch('https://formsubmit.co/ajax/cmunioz5235@gmail.com',{
+      method:'POST',
+      headers:{'Accept':'application/json'},
+      body:new FormData(contactForm)
+    });
+    if(!res.ok) throw new Error('bad status');
+    formResult.style.display='block';
+    formResult.style.color='var(--green)';
+    formResult.textContent='¡Gracias! Tu consulta fue enviada. Te responderemos a la brevedad.';
+    contactForm.reset();
+    selectCC(COUNTRIES.find(c=>c[0]==='AR'));
+  }catch(err){
+    formResult.style.display='block';
+    formResult.style.color='#ff7676';
+    formResult.textContent='No se pudo enviar automáticamente. Escríbenos directo a cmunioz5235@gmail.com';
+  }finally{
+    btn.textContent=original; btn.disabled=false;
+  }
+});
+
+// ---- Selector de idioma (traductor automático de Google) ----
+// [código ISO de Google Translate, etiqueta, abreviatura, bandera]
+const LANGS=[
+  ['es','Español','ES','es'],
+  ['en','English','EN','gb'],
+  ['ja','日本語','JA','jp'],
+  ['nl','Nederlands (België)','NL','be'],
+  ['fr','Français (Belgique)','FR','be']
+];
+function langFlagUrl(iso){return 'https://flagcdn.com/24x18/'+iso+'.png';}
+function currentLang(){ const m=document.cookie.match(/googtrans=\/[^/]*\/([^;]+)/); return m?decodeURIComponent(m[1]):'es'; }
+function applyLang(code){
+  if(code==='es'){
+    ['', '; domain='+location.hostname, '; domain=.'+location.hostname].forEach(d=>{
+      document.cookie='googtrans=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT'+d;
+    });
+    location.reload();
+    return;
+  }
+  const trySet=n=>{
+    const combo=document.querySelector('.goog-te-combo');
+    if(combo){ combo.value=code; combo.dispatchEvent(new Event('change')); }
+    else if(n<60){ setTimeout(()=>trySet(n+1),150); }
+  };
+  trySet(0);
+}
+function syncLangTriggers(){
+  const info=LANGS.find(l=>l[0]===currentLang())||LANGS[0];
+  document.querySelectorAll('[data-lang-select]').forEach(sel=>{
+    const flag=sel.querySelector('.lang-flag'); if(flag) flag.src=langFlagUrl(info[3]);
+    const nm=sel.querySelector('.lang-name');
+    if(nm) nm.textContent=sel.classList.contains('lang-foot')?info[1]:info[2];
+  });
+}
+document.querySelectorAll('[data-lang-select]').forEach(sel=>{
+  const trigger=sel.querySelector('.lang-trigger');
+  const panel=sel.querySelector('.lang-panel');
+  LANGS.forEach(l=>{
+    const opt=document.createElement('div');
+    opt.className='lang-opt';
+    opt.innerHTML='<img src="'+langFlagUrl(l[3])+'" alt=""><span>'+l[1]+'</span><span class="sub">'+l[2]+'</span>';
+    opt.addEventListener('click',()=>{ panel.classList.remove('open'); applyLang(l[0]); });
+    panel.appendChild(opt);
+  });
+  trigger.addEventListener('click',e=>{
+    e.stopPropagation();
+    const open=panel.classList.toggle('open');
+    trigger.setAttribute('aria-expanded',open?'true':'false');
+    document.querySelectorAll('.lang-panel.open').forEach(p=>{ if(p!==panel) p.classList.remove('open'); });
+  });
+});
+document.addEventListener('click',e=>{
+  document.querySelectorAll('[data-lang-select]').forEach(sel=>{
+    if(!sel.contains(e.target)) sel.querySelector('.lang-panel').classList.remove('open');
+  });
+});
+window.addEventListener('load',()=>setTimeout(syncLangTriggers,1000));
+</script>
+
+<!-- Traductor automático de Google -->
+<script type="text/javascript">
+function googleTranslateElementInit(){
+  new google.translate.TranslateElement({pageLanguage:'es',includedLanguages:'es,en,ja,nl,fr',autoDisplay:false},'google_translate_element');
+}
+</script>
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>
