@@ -31,6 +31,45 @@ a.ghost:hover{background:rgba(201,162,74,.12)}
 .counter{margin-top:18px;font-family:Arial,sans-serif;font-size:13px;color:var(--muted)}
 .es-only,.en-only{display:block}
 .en-only{display:none}
+
+#comprar{margin-top:48px}
+#comprar .kick{display:block;text-align:center;font-family:Arial,sans-serif;letter-spacing:5px;color:var(--gold);font-size:13px;text-transform:uppercase;margin-bottom:2px}
+#comprar h3.buy{text-align:center;font-size:32px;letter-spacing:1px;margin:6px 0 4px;color:var(--cream);font-weight:normal}
+#comprar .lead{text-align:center;font-family:Arial,sans-serif;color:var(--muted);font-size:14px;max-width:640px;margin:0 auto 22px;line-height:1.6}
+#comprar .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:0 0 30px}
+@media(max-width:820px){#comprar .cards{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){#comprar .cards{grid-template-columns:1fr}}
+#comprar .card{background:#101d2c;border:1px solid #2a3648;border-radius:14px;padding:18px 14px;text-align:center;position:relative;display:flex;flex-direction:column}
+#comprar .card.feat{border-color:var(--gold)}
+#comprar .card .flag{font-size:24px;margin-bottom:6px}
+#comprar .card .ct{font-family:Arial,sans-serif;font-weight:bold;letter-spacing:1px;font-size:11.5px;color:var(--muted);text-transform:uppercase}
+#comprar .card .price{font-family:Arial,sans-serif;font-weight:bold;font-size:23px;color:var(--cream);margin:7px 0 2px}
+#comprar .card .price small{display:block;font-size:12px;color:var(--gold);font-weight:bold;margin-top:3px}
+#comprar .card .desc{font-family:Arial,sans-serif;font-size:12px;color:#cdd6c9;line-height:1.5;margin-top:7px;flex:1}
+#comprar .badge{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--gold);color:#1a1206;font-family:Arial,sans-serif;font-weight:bold;font-size:10px;letter-spacing:1px;padding:3px 10px;border-radius:20px;text-transform:uppercase;white-space:nowrap}
+#comprar .pay{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:820px){#comprar .pay{grid-template-columns:1fr}}
+#comprar .pcol{background:rgba(16,29,44,.6);border:1px solid #2a3648;border-radius:14px;padding:16px 14px}
+#comprar .pcol h4{font-family:Arial,sans-serif;font-size:14px;letter-spacing:1px;margin:0 0 3px;color:var(--cream)}
+#comprar .pcol .cur{font-family:Arial,sans-serif;font-size:11.5px;color:var(--muted);margin-bottom:12px}
+#comprar a.pbtn,#comprar button.pbtn{display:flex;align-items:center;justify-content:center;gap:8px;font-family:Arial,sans-serif;font-weight:bold;text-decoration:none;padding:11px 12px;border-radius:10px;font-size:13.5px;margin-bottom:9px;width:100%;border:none;cursor:pointer}
+#comprar a.arq,#comprar button.arq{background:#6c4cf0;color:#fff}
+#comprar a.ml,#comprar button.ml{background:#009ee3;color:#fff}
+#comprar a.pp{background:#003087;color:#fff}
+#comprar .arqbox{background:#0b1622;border:1px solid #2a3648;border-radius:10px;padding:11px;margin:-4px 0 11px}
+#comprar .arow{display:flex;justify-content:space-between;align-items:center;gap:8px;font-family:Arial,sans-serif;font-size:11.5px;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+#comprar .arow:last-child{border-bottom:none}
+#comprar .arow .k{color:var(--muted);white-space:nowrap}
+#comprar .arow .v{color:var(--cream);font-weight:bold;word-break:break-all;text-align:right;flex:1}
+#comprar .cpy{background:transparent;border:1px solid var(--gold);color:var(--gold);border-radius:6px;font-size:11px;padding:3px 8px;cursor:pointer;font-family:Arial,sans-serif;white-space:nowrap}
+#comprar .orderform{max-width:640px;margin:30px auto 0;background:rgba(16,29,44,.6);border:1px solid #2a3648;border-radius:14px;padding:22px}
+#comprar .orderform h4{font-family:Arial,sans-serif;font-size:15px;color:var(--cream);margin:0 0 6px;text-align:center;letter-spacing:1px}
+#comprar .orderform label{display:block;font-family:Arial,sans-serif;font-size:12px;color:var(--muted);margin:10px 0 4px}
+#comprar .orderform input,#comprar .orderform select,#comprar .orderform textarea{width:100%;background:#0b1622;border:1px solid #2a3648;border-radius:8px;color:var(--cream);font-family:Arial,sans-serif;font-size:14px;padding:10px 12px}
+#comprar .send{display:block;width:100%;margin-top:16px;background:#128C7E;color:#fff;font-family:Arial,sans-serif;font-weight:bold;border:none;border-radius:10px;padding:13px;font-size:15px;cursor:pointer}
+#comprar .send:hover{background:#15a08f}
+#comprar .notes{font-family:Arial,sans-serif;font-size:12px;color:var(--muted);max-width:640px;margin:16px auto 0;line-height:1.6;text-align:center}
+
 </style>
 </head>
 <body>
@@ -50,8 +89,76 @@ a.ghost:hover{background:rgba(201,162,74,.12)}
       <a class="btn ghost" href="https://chaino1974.github.io/BInord-Advisory/" onclick="track('binord')">Conocer BINORD</a>
     </div>
     <div class="note">Adelanto gratuito: introducción y contratapa. La novela completa se consigue por contacto.</div>
-    <div class="contact">Conseguí tu ejemplar — impreso en papel reciclado — o escribinos:<br>
+    <div class="contact">¿Consultas? Escribinos:<br>
       <b>WhatsApp +54 3765 229399</b> · cmunioz5235@gmail.com</div>
+  <div id="comprar">
+      <span class="kick">IT'S TIME · Ahora es el momento</span>
+      <h3 class="buy">Comprá tu ejemplar</h3>
+      <p class="lead">Elegí tu edición y pagá de forma directa y segura. En Argentina, el ejemplar impreso va con estuche y envío incluido; las ediciones digitales se entregan al instante por email.</p>
+      <div class="cards">
+        <div class="card feat"><div class="badge">Argentina</div><div class="flag">📕</div><div class="ct">Impreso · Español</div><div class="price">$60.000<small>ARS · con estuche + envío</small></div><div class="desc">Ejemplar físico con estuche. Envío incluido a todo el país.</div></div>
+        <div class="card"><div class="flag">💻</div><div class="ct">Digital · Español</div><div class="price">$40.000<small>ARS · entrega inmediata</small></div><div class="desc">Edición digital ilustrada en español (PDF). Se envía por email al confirmarse el pago.</div></div>
+        <div class="card"><div class="flag">🌍</div><div class="ct">Digital · Inglés</div><div class="price">USD 50 · €45<small>internacional</small></div><div class="desc">Illustrated digital edition in English (PDF). Instant delivery, worldwide.</div></div>
+        <div class="card"><div class="flag">✍️</div><div class="ct">Digital personalizada</div><div class="price">USD 80 · €75<small>otros idiomas</small></div><div class="desc">Edición digital personalizada en el idioma que prefieras. Entrega por email.</div></div>
+      </div>
+      <p class="lead" style="margin-bottom:14px">Elegí cómo pagar según tu moneda — cada opción va directo a la cuenta correspondiente.</p>
+      <div class="pay">
+        <div class="pcol">
+          <h4>💵 Pesos argentinos</h4><div class="cur">ARS · cuenta en pesos</div>
+          <button class="pbtn arq" onclick="tog('arqArsEs')">Billetera ARQ (ARS) ▾</button>
+          <div class="arqbox" id="arqArsEs" hidden>
+            <div class="arow"><span class="k">Alias</span><span class="v">sagita.agua-dolarapp</span><button class="cpy" onclick="cp('sagita.agua-dolarapp',this)">Copiar</button></div>
+            <div class="arow"><span class="k">CVU</span><span class="v">0000069701884306781330</span><button class="cpy" onclick="cp('0000069701884306781330',this)">Copiar</button></div>
+            <div class="arow"><span class="k">Banco</span><span class="v">GARPA S.A.</span></div>
+            <div class="arow"><span class="k">Titular</span><span class="v">Claudio Muñoz</span></div>
+          </div>
+          <button class="pbtn ml" onclick="tog('mpArsEs')">Mercado Pago ▾</button>
+          <div class="arqbox" id="mpArsEs" hidden>
+            <div class="arow"><span class="k">Alias</span><span class="v">cuido.alpes.disco.mp</span><button class="cpy" onclick="cp('cuido.alpes.disco.mp',this)">Copiar</button></div>
+            <div class="arow"><span class="k">CVU</span><span class="v">0000003100005931988465</span><button class="cpy" onclick="cp('0000003100005931988465',this)">Copiar</button></div>
+            <div class="arow"><span class="k">Titular</span><span class="v">Claudio Muñoz</span></div>
+          </div>
+        </div>
+        <div class="pcol">
+          <h4>💲 Dólares</h4><div class="cur">USD · cuenta en dólares</div>
+          <button class="pbtn arq" onclick="tog('arqUsdEs')">Billetera ARQ (USD) ▾</button>
+          <div class="arqbox" id="arqUsdEs" hidden>
+            <div class="arow"><span class="k">Cuenta N°</span><span class="v">214076436160</span><button class="cpy" onclick="cp('214076436160',this)">Copiar</button></div>
+            <div class="arow"><span class="k">ABA / Routing</span><span class="v">10119644</span><button class="cpy" onclick="cp('10119644',this)">Copiar</button></div>
+            <div class="arow"><span class="k">Banco</span><span class="v">Lead Bank</span></div>
+            <div class="arow"><span class="k">Titular</span><span class="v">Claudio Muñoz</span></div>
+          </div>
+          <a class="pbtn pp" href="https://www.paypal.me/claudiomunioz" target="_blank">Pagar con PayPal</a>
+        </div>
+        <div class="pcol">
+          <h4>💶 Euros</h4><div class="cur">EUR · cuenta en euros</div>
+          <button class="pbtn arq" onclick="tog('arqEurEs')">Billetera ARQ (EUR) ▾</button>
+          <div class="arqbox" id="arqEurEs" hidden>
+            <div class="arow"><span class="k">IBAN</span><span class="v">LU90 4080 0000 4787 3925</span><button class="cpy" onclick="cp('LU904080000047873925',this)">Copiar</button></div>
+            <div class="arow"><span class="k">Beneficiario</span><span class="v">Bridge Building SA</span></div>
+            <div class="arow"><span class="k">País</span><span class="v">Luxemburgo</span></div>
+          </div>
+          <a class="pbtn pp" href="https://www.paypal.me/claudiomunioz" target="_blank">Pagar con PayPal</a>
+        </div>
+      </div>
+      <div class="orderform">
+        <h4>Completá tus datos para el pedido</h4>
+        <label>Nombre y apellido</label><input id="oNomEs" placeholder="Tu nombre completo">
+        <label>Email</label><input id="oMailEs" type="email" placeholder="tucorreo@email.com">
+        <label>Teléfono</label><input id="oTelEs" placeholder="Cód. país + número">
+        <label>Domicilio de entrega (para ejemplar impreso)</label><input id="oDirEs" placeholder="Calle, número, ciudad, provincia, CP">
+        <label>Edición</label>
+        <select id="oEdEs">
+          <option>Impreso con estuche — $60.000 (Argentina)</option>
+          <option>Digital español — $40.000</option>
+          <option>Digital inglés — USD 50 / €45</option>
+          <option>Digital personalizada — USD 80 / €75</option>
+        </select>
+        <label>Idioma / dedicatoria (opcional)</label><input id="oDedEs" placeholder="Ej.: francés — dedicatoria deseada">
+        <button class="send" onclick="sendOrder('es')">💬 Enviar pedido por WhatsApp</button>
+      </div>
+      <p class="notes">Al enviar el pedido se abre WhatsApp con tus datos cargados. Coordinamos el pago y, una vez confirmado, se realiza el envío (impreso) o la entrega por email (digital).</p>
+    </div>
   </div>
 
   <!-- ENGLISH -->
@@ -63,20 +170,88 @@ a.ghost:hover{background:rgba(201,162,74,.12)}
       <a class="btn ghost" href="https://chaino1974.github.io/BInord-Advisory/" onclick="track('binord')">About BINORD</a>
     </div>
     <div class="note">Free sample: introduction and back cover. The complete novel is available on request.</div>
-    <div class="contact">Get your copy — printed on recycled paper — or write to us:<br>
+    <div class="contact">Questions? Write to us:<br>
       <b>WhatsApp +54 3765 229399</b> · cmunioz5235@gmail.com</div>
+  <div id="comprar">
+      <span class="kick">IT'S TIME · Now is the moment</span>
+      <h3 class="buy">Get your copy</h3>
+      <p class="lead">Choose your edition and pay directly and securely. Digital editions are delivered instantly by email — no shipping, anywhere in the world.</p>
+      <div class="cards">
+        <div class="card"><div class="flag">📕</div><div class="ct">Printed · Spanish</div><div class="price">$60,000<small>ARS · slipcase + shipping (AR)</small></div><div class="desc">Physical copy with slipcase. Shipping included across Argentina.</div></div>
+        <div class="card"><div class="flag">💻</div><div class="ct">Digital · Spanish</div><div class="price">$40,000<small>ARS · instant</small></div><div class="desc">Illustrated digital edition in Spanish (PDF). Sent by email once payment is confirmed.</div></div>
+        <div class="card feat"><div class="badge">International</div><div class="flag">🌍</div><div class="ct">Digital · English</div><div class="price">USD 50 · €45<small>worldwide</small></div><div class="desc">Illustrated digital edition in English (PDF). Instant delivery, no shipping.</div></div>
+        <div class="card"><div class="flag">✍️</div><div class="ct">Digital personalized</div><div class="price">USD 80 · €75<small>other languages</small></div><div class="desc">Personalized digital edition in the language you prefer. Delivered by email.</div></div>
+      </div>
+      <p class="lead" style="margin-bottom:14px">Choose how to pay by currency — each option goes straight to the matching account.</p>
+      <div class="pay">
+        <div class="pcol">
+          <h4>💵 Argentine pesos</h4><div class="cur">ARS · peso account</div>
+          <button class="pbtn arq" onclick="tog('arqArsEn')">ARQ wallet (ARS) ▾</button>
+          <div class="arqbox" id="arqArsEn" hidden>
+            <div class="arow"><span class="k">Alias</span><span class="v">sagita.agua-dolarapp</span><button class="cpy" onclick="cp('sagita.agua-dolarapp',this)">Copy</button></div>
+            <div class="arow"><span class="k">CVU</span><span class="v">0000069701884306781330</span><button class="cpy" onclick="cp('0000069701884306781330',this)">Copy</button></div>
+            <div class="arow"><span class="k">Bank</span><span class="v">GARPA S.A.</span></div>
+            <div class="arow"><span class="k">Holder</span><span class="v">Claudio Muñoz</span></div>
+          </div>
+          <button class="pbtn ml" onclick="tog('mpArsEn')">Mercado Pago ▾</button>
+          <div class="arqbox" id="mpArsEn" hidden>
+            <div class="arow"><span class="k">Alias</span><span class="v">cuido.alpes.disco.mp</span><button class="cpy" onclick="cp('cuido.alpes.disco.mp',this)">Copy</button></div>
+            <div class="arow"><span class="k">CVU</span><span class="v">0000003100005931988465</span><button class="cpy" onclick="cp('0000003100005931988465',this)">Copy</button></div>
+            <div class="arow"><span class="k">Holder</span><span class="v">Claudio Muñoz</span></div>
+          </div>
+        </div>
+        <div class="pcol">
+          <h4>💲 US dollars</h4><div class="cur">USD · dollar account</div>
+          <button class="pbtn arq" onclick="tog('arqUsdEn')">ARQ wallet (USD) ▾</button>
+          <div class="arqbox" id="arqUsdEn" hidden>
+            <div class="arow"><span class="k">Account No.</span><span class="v">214076436160</span><button class="cpy" onclick="cp('214076436160',this)">Copy</button></div>
+            <div class="arow"><span class="k">ABA / Routing</span><span class="v">10119644</span><button class="cpy" onclick="cp('10119644',this)">Copy</button></div>
+            <div class="arow"><span class="k">Bank</span><span class="v">Lead Bank</span></div>
+            <div class="arow"><span class="k">Holder</span><span class="v">Claudio Muñoz</span></div>
+          </div>
+          <a class="pbtn pp" href="https://www.paypal.me/claudiomunioz" target="_blank">Pay with PayPal</a>
+        </div>
+        <div class="pcol">
+          <h4>💶 Euros</h4><div class="cur">EUR · euro account</div>
+          <button class="pbtn arq" onclick="tog('arqEurEn')">ARQ wallet (EUR) ▾</button>
+          <div class="arqbox" id="arqEurEn" hidden>
+            <div class="arow"><span class="k">IBAN</span><span class="v">LU90 4080 0000 4787 3925</span><button class="cpy" onclick="cp('LU904080000047873925',this)">Copy</button></div>
+            <div class="arow"><span class="k">Beneficiary</span><span class="v">Bridge Building SA</span></div>
+            <div class="arow"><span class="k">Country</span><span class="v">Luxembourg</span></div>
+          </div>
+          <a class="pbtn pp" href="https://www.paypal.me/claudiomunioz" target="_blank">Pay with PayPal</a>
+        </div>
+      </div>
+      <div class="orderform">
+        <h4>Fill in your details to order</h4>
+        <label>Full name</label><input id="oNomEn" placeholder="Your full name">
+        <label>Email</label><input id="oMailEn" type="email" placeholder="you@email.com">
+        <label>Phone</label><input id="oTelEn" placeholder="Country code + number">
+        <label>Delivery address (for printed copy)</label><input id="oDirEn" placeholder="Street, number, city, country, ZIP">
+        <label>Edition</label>
+        <select id="oEdEn">
+          <option>Printed with slipcase — $60,000 ARS (Argentina)</option>
+          <option>Digital Spanish — $40,000 ARS</option>
+          <option>Digital English — USD 50 / €45</option>
+          <option>Digital personalized — USD 80 / €75</option>
+        </select>
+        <label>Language / dedication (optional)</label><input id="oDedEn" placeholder="e.g. French — desired dedication">
+        <button class="send" onclick="sendOrder('en')">💬 Send order via WhatsApp</button>
+      </div>
+      <p class="notes">Sending the order opens WhatsApp with your details prefilled. We coordinate payment and, once confirmed, ship the printed copy or deliver the digital edition by email.</p>
+    </div>
   </div>
 
   <div class="counter" id="counter">
-    <!-- CONTADOR DE VISITAS (GoatCounter). Reemplazá TUCODIGO por tu código gratuito (ver README). -->
-    <img src="https://TUCODIGO.goatcounter.com/counter/its-time.html.svg" alt="visitas" style="opacity:.8">
+    <!-- CONTADOR DE VISITAS (GoatCounter). Reemplazá binord-advisory-co por tu código gratuito (ver README). -->
+    <img src="https://binord-advisory-co.goatcounter.com/counter/its-time.html.svg" alt="visitas" style="opacity:.8">
   </div>
 
   <div class="foot">BINORD Advisory Co. · Building the Road to Zero Carbon · Novela de concientización climática</div>
 </div>
 
 <!-- Analítica de visitas (GoatCounter, gratuito y respetuoso de la privacidad). Ver README para activarlo. -->
-<script data-goatcounter="https://TUCODIGO.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script data-goatcounter="https://binord-advisory-co.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
 <script>
 function setLang(l){
@@ -90,6 +265,23 @@ function setLang(l){
 }
 // idioma automático según el navegador
 if((navigator.language||'es').slice(0,2)=='en'){setLang('en');}
+function tog(id){var e=document.getElementById(id);if(e)e.hidden=!e.hidden;}
+function cp(t,btn){navigator.clipboard.writeText(t).then(function(){var o=btn.textContent;btn.textContent="✓";setTimeout(function(){btn.textContent=o;},1200);});}
+function sendOrder(l){
+  var S=l=="en"?"En":"Es";
+  var g=function(id){var e=document.getElementById(id);return e?e.value.trim():"";};
+  var nom=g("oNom"+S),mail=g("oMail"+S),tel=g("oTel"+S),dir=g("oDir"+S),ed=g("oEd"+S),ded=g("oDed"+S);
+  if(!nom){alert(l=="en"?"Please enter your name.":"Por favor ingresá tu nombre.");return;}
+  var t=l=="en"?"New order - IT'S TIME":"Nuevo pedido - IT'S TIME";
+  var K=l=="en"?{n:"Name",m:"Email",p:"Phone",a:"Address",e:"Edition",d:"Language/dedication"}:{n:"Nombre",m:"Email",p:"Telefono",a:"Domicilio",e:"Edicion",d:"Idioma/dedicatoria"};
+  var msg=t+"\n"+K.n+": "+nom;
+  if(mail)msg+="\n"+K.m+": "+mail;
+  if(tel)msg+="\n"+K.p+": "+tel;
+  if(dir)msg+="\n"+K.a+": "+dir;
+  if(ed)msg+="\n"+K.e+": "+ed;
+  if(ded)msg+="\n"+K.d+": "+ded;
+  window.open("https://wa.me/5493765229399?text="+encodeURIComponent(msg),"_blank");
+}
 function track(what){ if(window.goatcounter&&window.goatcounter.count){window.goatcounter.count({path:'click-'+what,event:true});} }
 </script>
 </body>
