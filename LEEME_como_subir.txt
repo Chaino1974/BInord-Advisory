@@ -1,0 +1,27 @@
+========================================================================
+CÓMO ACTIVAR EL QR DEL TRAILER (páginas de las ediciones digitales)
+========================================================================
+
+El QR de la "página de trailer" (en los PDF digitales) apunta a:
+   https://chaino1974.github.io/BInord-Advisory/its-time-spot.html
+
+Para que funcione hay que subir ESTOS 3 archivos a la RAÍZ del repo
+Chaino1974/BInord-Advisory (los mismos pasos de siempre):
+
+   1) its-time-spot.html
+   2) SPOT_ITSTIME_ES_video_Moby.mp4
+   3) SPOT_ITSTIME_EN_video_Moby.mp4
+
+PASOS:
+   - Entrá a github.com/Chaino1974/BInord-Advisory
+   - Add file ▸ Upload files
+   - Arrastrá los 3 archivos de esta carpeta
+   - Commit changes
+
+Con el .nojekyll que ya está, publica en segundos. Después, al escanear
+el QR del libro se abre la página del spot (elige Español / English) y
+reproduce el trailer.
+
+Nota: si preferís no subir los MP4 al repo, se puede apuntar el QR a un
+video de YouTube/Vimeo; avisame y cambio el destino del QR.
+========================================================================
